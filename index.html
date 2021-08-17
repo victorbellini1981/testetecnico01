@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Teste Técnico 01</title>
+    <script type="text/javascript">
+        function resultado() {
+	        var resultad = document.getElementById("resultado");
+            var nroinicial = document.getElementById("numero").value;
+            var result = 0;
+            var soma = "";
+            var lista = [];
+            for (var i = 1; i < nroinicial; i++) {
+                if(i%3 == 0 || i%5 == 0) {
+                    result = result + i;
+                    lista.push(i);
+                }
+            }
+            for (var j = 0; j < lista.length; j++) {
+                if (j < (lista.length - 1)) {
+                    soma = soma + lista[j].toString() + " + ";
+                } else {
+                    soma = soma + lista[j].toString() + " = " + result.toString();
+                }
+            }
+            resultad.innerHTML = '<b>Resultado: </b>' + soma;
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center; color: black;"><h2>Teste Técnico 01</h2></div>
+    <div style="text-align: center; color: black;"><h3>Empresa: Escribo Inovação para o Aprendizado</h3></div>
+    <div style="text-align: center; color: black;"><h3>Candidato: João Victor Bellini</h3></div>
+    <div style="text-align: center;">
+        <div>
+            <label>Digite um número:</label>
+            <input type="text" id="numero" style="width: 50px;"/>
+        </div>
+        <div style="height: 5px"></div>
+        <button type="submit" onclick="resultado()">Calcular</button>
+        <div style="height: 5px"></div>
+        <div id="resultado">
+            
+        </div>
+    </div>
+</body>
+</html>
